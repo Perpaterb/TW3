@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>TW</title>
+</head>
+
+<body id="page-top">
+
+  <!-- Header Starts -->
+  <section id="Banner" class="content-section">
+    <div class="container content-wrap text-center">
+      <h1>TW</h1>
+      <h3>
+          <em>Another app for selling your stuff</em>
+        </h3>
+        <% if user_signed_in? %>
+            <a class="btn-primary btn-xl" <%= link_to "Sell", sell_path %>
+            <a class="btn-primary btn-xl" <%= link_to "History", history_path %>
+    
+            <a class="btn-primary btn-xl" <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
+        <% else %>
+            <a class="btn-primary btn-xl" <%= link_to "Login", new_user_session_path %>
+            <a class="btn-primary btn-xl" <%= link_to "Sign up", new_user_registration_path %>
+        <% end %>
+
+    </div>
+    <div class="overlay"></div>
+  </section>
+  <!-- Header Ends -->
+
+  <!-- About Us Starts -->
+  <section id="Services" class="content-section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="service-box">
+
+
+            <div class="service-icon yellow">
+              <div class="front-content">
+                <h3>Family Travel</h3>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3>Family Travel</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-md-3 col-sm-6">
+          <div class="service-box">
+            <div class="service-icon orange">
+              <div class="front-content">
+                <i class="fa fa-suitcase"></i>
+                <h3>Business Travel</h3>
+              </div>
+            </div>
+            <div class="service-content">
+              <h3>Business Travel</h3>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text</p>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </section>
+  <footer class="footer text-center">
+  </footer>
+</body>
+
+</html>
