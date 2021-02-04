@@ -21,7 +21,9 @@
         <% if user_signed_in? %>
             <a class="btn-primary btn-xl" <%= link_to "Sell", sell_path %>
             <a class="btn-primary btn-xl" <%= link_to "History", history_path %>
-    
+            <% if current_user.admin %>
+              <a class="btn-primary btn-xl" <%= link_to "admin", admin_path %>
+            <% end%>
             <a class="btn-primary btn-xl" <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
         <% else %>
             <a class="btn-primary btn-xl" <%= link_to "Login", new_user_session_path %>

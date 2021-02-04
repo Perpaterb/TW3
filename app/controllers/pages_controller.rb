@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
 
   def admin
-
+    @users = User.all
   end
 
   def sell
@@ -14,4 +14,14 @@ class PagesController < ApplicationController
 
   def history
   end
+
+  def admin_destroy_user
+    #if params[:id] != @@loggedin_user_id
+        @user = User.find(params[:id])
+        @user.destroy
+        redirect_to admin_path
+    #end
+  end
+
+
 end

@@ -1,2 +1,28 @@
-<h1>Pages#admin</h1>
-<p>make a list of all the users. let the admin delete users or make them admin</p>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+
+    <main id="pages-admin">
+
+        <h1>Admin page</h1>
+
+            <section class="user-list">
+                <%@users.each do |user|%>
+                    <div class="card <%=user[:admin]%>">
+                        <h5>ID: <%=user[:id]%></h5>
+                        <h5>Email: <%=user[:email]%></h5>
+                        <h5>Admin: <%=user[:admin]%></h5>
+
+                    </div>
+                <%end%>
+            </section>
+
+    </main>
+
+</body>
+</html>
