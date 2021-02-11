@@ -3,6 +3,7 @@ class PagesController < ApplicationController
   before_action :admin_only , only:[:admin]
 
   def home
+    @product = Product.all
   end
 
   def admin
