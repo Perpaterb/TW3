@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+</style>
+</head>
+<body>
+<div class="navbar">
+    <% if user_signed_in? %>
+        <a class="btn-primary btn-xl" <%= link_to "Sell", sell_path %>
+        <a class="btn-primary btn-xl" <%= link_to "History", history_path %>
+        <% if current_user.admin %>
+            <a class="btn-primary btn-xl" <%= link_to "admin", admin_path %>
+        <% end%>
+        <a class="btn-primary btn-xl" <%= link_to "Sign out", destroy_user_session_path, method: "delete" %>
+    <% else %>
+        <a class="btn-primary btn-xl" <%= link_to "Login", new_user_session_path %>
+        <a class="btn-primary btn-xl" <%= link_to "Sign up", new_user_registration_path %>
+    <% end %>
+</div>
+</body>
+</html>
